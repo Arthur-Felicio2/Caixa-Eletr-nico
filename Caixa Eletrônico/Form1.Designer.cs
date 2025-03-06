@@ -36,6 +36,7 @@
             this.numOperlim = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.numOperSaldo = new System.Windows.Forms.NumericUpDown();
+            this.erro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperSaldo)).BeginInit();
@@ -87,6 +88,11 @@
             // numOperval
             // 
             this.numOperval.Location = new System.Drawing.Point(156, 126);
+            this.numOperval.Maximum = new decimal(new int[] {
+            1661992959,
+            1808227885,
+            5,
+            0});
             this.numOperval.Name = "numOperval";
             this.numOperval.Size = new System.Drawing.Size(120, 20);
             this.numOperval.TabIndex = 5;
@@ -95,6 +101,11 @@
             // numOperlim
             // 
             this.numOperlim.Location = new System.Drawing.Point(156, 260);
+            this.numOperlim.Maximum = new decimal(new int[] {
+            1241513983,
+            370409800,
+            542101,
+            0});
             this.numOperlim.Name = "numOperlim";
             this.numOperlim.Size = new System.Drawing.Size(120, 20);
             this.numOperlim.TabIndex = 6;
@@ -112,11 +123,25 @@
             // 
             // numOperSaldo
             // 
+            this.numOperSaldo.Enabled = false;
             this.numOperSaldo.Location = new System.Drawing.Point(455, 191);
+            this.numOperSaldo.Maximum = new decimal(new int[] {
+            -1593835521,
+            466537709,
+            54210,
+            0});
             this.numOperSaldo.Name = "numOperSaldo";
             this.numOperSaldo.Size = new System.Drawing.Size(120, 20);
             this.numOperSaldo.TabIndex = 8;
             this.numOperSaldo.ValueChanged += new System.EventHandler(this.numOperSaldo_ValueChanged);
+            // 
+            // erro
+            // 
+            this.erro.Location = new System.Drawing.Point(53, 318);
+            this.erro.Name = "erro";
+            this.erro.Size = new System.Drawing.Size(163, 20);
+            this.erro.TabIndex = 9;
+            this.erro.TextChanged += new System.EventHandler(this.erro_TextChanged);
             // 
             // Form1
             // 
@@ -125,6 +150,7 @@
             this.BackgroundImage = global::Caixa_Eletrônico.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.erro);
             this.Controls.Add(this.numOperSaldo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numOperlim);
@@ -153,6 +179,7 @@
         private System.Windows.Forms.NumericUpDown numOperlim;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numOperSaldo;
+        private System.Windows.Forms.TextBox erro;
     }
 }
 

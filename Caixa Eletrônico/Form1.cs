@@ -44,8 +44,25 @@ namespace Caixa_Eletrônico
         }
 
         private void btSac_Click(object sender, EventArgs e)
+        
         {
-           
+            double Sub = 0;
+            double Valor = (double)numOperlim.Value;
+            double Sac = (double)numOperval.Value;
+            if(Sac <= Valor)
+            {
+                Sub = Valor - Sac;
+                numOperSaldo.Value = (decimal)Sub;
+            }
+
+            else
+            {
+                erro.Text = "Saldo insuficiente";
+            }
+                
+            
+
+            
             
 
         }
@@ -63,6 +80,11 @@ namespace Caixa_Eletrônico
         private void numOperSaldo_ValueChanged(object sender, EventArgs e)
         {
             numOperlim.Value = numOperSaldo.Value;
+        }
+
+        private void erro_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
