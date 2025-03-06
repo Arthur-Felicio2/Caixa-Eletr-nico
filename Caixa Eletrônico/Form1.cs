@@ -37,19 +37,22 @@ namespace Caixa_Eletrônico
         private void btDep_Click(object sender, EventArgs e)
         {
             double Soma = 0;
-            double Valor = (double)numOperlim.Value;
+            double Valor = (double)numOperSaldo.Value;
             double Dep = (double)numOperval.Value;
+            double Limit = (double)numOperlim.Value;
             Soma = Valor + Dep;
             numOperSaldo.Value = (decimal)Soma;
+            
+            
         }
 
         private void btSac_Click(object sender, EventArgs e)
         
         {
             double Sub = 0;
-            double Valor = (double)numOperlim.Value;
+            double Valor = (double)numOperSaldo.Value;
             double Sac = (double)numOperval.Value;
-            if(Sac <= Valor)
+            if(Valor - Sac >= -(double)numOperlim.Value)
             {
                 Sub = Valor - Sac;
                 numOperSaldo.Value = (decimal)Sub;
@@ -79,7 +82,7 @@ namespace Caixa_Eletrônico
 
         private void numOperSaldo_ValueChanged(object sender, EventArgs e)
         {
-            numOperlim.Value = numOperSaldo.Value;
+            
         }
 
         private void erro_TextChanged(object sender, EventArgs e)

@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numOperSaldo = new System.Windows.Forms.NumericUpDown();
             this.erro = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperSaldo)).BeginInit();
@@ -109,6 +110,11 @@
             this.numOperlim.Name = "numOperlim";
             this.numOperlim.Size = new System.Drawing.Size(120, 20);
             this.numOperlim.TabIndex = 6;
+            this.numOperlim.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numOperlim.ValueChanged += new System.EventHandler(this.numOperlim_ValueChanged);
             // 
             // label4
@@ -124,12 +130,17 @@
             // numOperSaldo
             // 
             this.numOperSaldo.Enabled = false;
-            this.numOperSaldo.Location = new System.Drawing.Point(455, 191);
+            this.numOperSaldo.Location = new System.Drawing.Point(486, 192);
             this.numOperSaldo.Maximum = new decimal(new int[] {
             -1593835521,
             466537709,
             54210,
             0});
+            this.numOperSaldo.Minimum = new decimal(new int[] {
+            1241513983,
+            370409800,
+            542101,
+            -2147483648});
             this.numOperSaldo.Name = "numOperSaldo";
             this.numOperSaldo.Size = new System.Drawing.Size(120, 20);
             this.numOperSaldo.TabIndex = 8;
@@ -143,6 +154,16 @@
             this.erro.TabIndex = 9;
             this.erro.TextChanged += new System.EventHandler(this.erro_TextChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(453, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "R$";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +171,7 @@
             this.BackgroundImage = global::Caixa_Eletrônico.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.erro);
             this.Controls.Add(this.numOperSaldo);
             this.Controls.Add(this.label4);
@@ -180,6 +202,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numOperSaldo;
         private System.Windows.Forms.TextBox erro;
+        private System.Windows.Forms.Label label3;
     }
 }
 
