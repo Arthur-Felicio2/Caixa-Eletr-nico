@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblSal = new System.Windows.Forms.Label();
             this.btDep = new System.Windows.Forms.Button();
             this.btSac = new System.Windows.Forms.Button();
             this.numOperval = new System.Windows.Forms.NumericUpDown();
             this.numOperlim = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.numOperSaldo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOperSaldo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,16 +62,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Saldo =";
             // 
-            // lblSal
-            // 
-            this.lblSal.AutoSize = true;
-            this.lblSal.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSal.Location = new System.Drawing.Point(493, 180);
-            this.lblSal.Name = "lblSal";
-            this.lblSal.Size = new System.Drawing.Size(70, 33);
-            this.lblSal.TabIndex = 2;
-            this.lblSal.Text = "0,00";
-            // 
             // btDep
             // 
             this.btDep.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,6 +71,7 @@
             this.btDep.TabIndex = 3;
             this.btDep.Text = "DEPOSITAR";
             this.btDep.UseVisualStyleBackColor = true;
+            this.btDep.Click += new System.EventHandler(this.btDep_Click);
             // 
             // btSac
             // 
@@ -91,6 +82,7 @@
             this.btSac.TabIndex = 4;
             this.btSac.Text = "SACAR";
             this.btSac.UseVisualStyleBackColor = true;
+            this.btSac.Click += new System.EventHandler(this.btSac_Click);
             // 
             // numOperval
             // 
@@ -98,6 +90,7 @@
             this.numOperval.Name = "numOperval";
             this.numOperval.Size = new System.Drawing.Size(120, 20);
             this.numOperval.TabIndex = 5;
+            this.numOperval.ValueChanged += new System.EventHandler(this.numOperval_ValueChanged);
             // 
             // numOperlim
             // 
@@ -105,6 +98,7 @@
             this.numOperlim.Name = "numOperlim";
             this.numOperlim.Size = new System.Drawing.Size(120, 20);
             this.numOperlim.TabIndex = 6;
+            this.numOperlim.ValueChanged += new System.EventHandler(this.numOperlim_ValueChanged);
             // 
             // label4
             // 
@@ -116,16 +110,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "LIMITE:";
             // 
-            // label5
+            // numOperSaldo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(432, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 33);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "R$";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.numOperSaldo.Location = new System.Drawing.Point(455, 191);
+            this.numOperSaldo.Name = "numOperSaldo";
+            this.numOperSaldo.Size = new System.Drawing.Size(120, 20);
+            this.numOperSaldo.TabIndex = 8;
+            this.numOperSaldo.ValueChanged += new System.EventHandler(this.numOperSaldo_ValueChanged);
             // 
             // Form1
             // 
@@ -134,19 +125,19 @@
             this.BackgroundImage = global::Caixa_Eletrônico.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numOperSaldo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numOperlim);
             this.Controls.Add(this.numOperval);
             this.Controls.Add(this.btSac);
             this.Controls.Add(this.btDep);
-            this.Controls.Add(this.lblSal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOperSaldo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,13 +147,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSal;
         private System.Windows.Forms.Button btDep;
         private System.Windows.Forms.Button btSac;
         private System.Windows.Forms.NumericUpDown numOperval;
         private System.Windows.Forms.NumericUpDown numOperlim;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numOperSaldo;
     }
 }
 

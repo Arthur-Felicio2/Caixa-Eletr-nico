@@ -17,6 +17,8 @@ namespace Caixa_Eletrônico
             InitializeComponent();
         }
 
+        
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -25,6 +27,42 @@ namespace Caixa_Eletrônico
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numOperval_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btDep_Click(object sender, EventArgs e)
+        {
+            double Soma = 0;
+            double Valor = (double)numOperlim.Value;
+            double Dep = (double)numOperval.Value;
+            Soma = Valor + Dep;
+            numOperSaldo.Value = (decimal)Soma;
+        }
+
+        private void btSac_Click(object sender, EventArgs e)
+        {
+           
+            
+
+        }
+
+        private void numOperlim_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSal_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void numOperSaldo_ValueChanged(object sender, EventArgs e)
+        {
+            numOperlim.Value = numOperSaldo.Value;
         }
     }
 }
