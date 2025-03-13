@@ -42,8 +42,9 @@ namespace Caixa_Eletrônico
             double Limit = (double)numOperlim.Value;
             Soma = Valor + Dep;
             numOperSaldo.Value = (decimal)Soma;
-            
-            
+            erro.Text = " ";
+
+
         }
 
         private void btSac_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Caixa_Eletrônico
             {
                 Sub = Valor - Sac;
                 numOperSaldo.Value = (decimal)Sub;
+                erro.Text = " ";
             }
 
             else
@@ -86,6 +88,11 @@ namespace Caixa_Eletrônico
         }
 
         private void erro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
