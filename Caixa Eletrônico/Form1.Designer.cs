@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btDep = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.numOperSaldo = new System.Windows.Forms.NumericUpDown();
             this.erro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tmrJuros = new System.Windows.Forms.Timer(this.components);
+            this.lblTaxa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperSaldo)).BeginInit();
@@ -164,6 +167,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "R$";
             // 
+            // tmrJuros
+            // 
+            this.tmrJuros.Enabled = true;
+            this.tmrJuros.Interval = 5000;
+            this.tmrJuros.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblTaxa
+            // 
+            this.lblTaxa.AutoSize = true;
+            this.lblTaxa.Location = new System.Drawing.Point(63, 388);
+            this.lblTaxa.Name = "lblTaxa";
+            this.lblTaxa.Size = new System.Drawing.Size(16, 13);
+            this.lblTaxa.TabIndex = 11;
+            this.lblTaxa.Text = "...";
+            this.lblTaxa.Click += new System.EventHandler(this.label5_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +190,7 @@
             this.BackgroundImage = global::Caixa_Eletrônico.Properties.Resources.images;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTaxa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.erro);
             this.Controls.Add(this.numOperSaldo);
@@ -183,6 +203,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numOperval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOperlim)).EndInit();
@@ -204,6 +225,8 @@
         private System.Windows.Forms.NumericUpDown numOperSaldo;
         private System.Windows.Forms.TextBox erro;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer tmrJuros;
+        private System.Windows.Forms.Label lblTaxa;
     }
 }
 
