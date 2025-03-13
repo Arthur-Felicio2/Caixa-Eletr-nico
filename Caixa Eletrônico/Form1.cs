@@ -17,7 +17,7 @@ namespace Caixa_Eletrônico
             InitializeComponent();
         }
 
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -48,12 +48,12 @@ namespace Caixa_Eletrônico
         }
 
         private void btSac_Click(object sender, EventArgs e)
-        
+
         {
             double Sub = 0;
             double Valor = (double)numOperSaldo.Value;
             double Sac = (double)numOperval.Value;
-            if(Valor - Sac >= -(double)numOperlim.Value)
+            if (Valor - Sac >= -(double)numOperlim.Value)
             {
                 Sub = Valor - Sac;
                 numOperSaldo.Value = (decimal)Sub;
@@ -64,11 +64,11 @@ namespace Caixa_Eletrônico
             {
                 erro.Text = "Saldo insuficiente";
             }
-                
-            
 
-            
-            
+
+
+
+
 
         }
 
@@ -79,12 +79,12 @@ namespace Caixa_Eletrônico
 
         private void lblSal_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void numOperSaldo_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void erro_TextChanged(object sender, EventArgs e)
@@ -94,7 +94,38 @@ namespace Caixa_Eletrônico
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblTaxa.Text =
+                $"* Taxa: {taxa * 100}% a.c {tmrJuros.Interval / 1000}s";
+        }
+        double taxa = 0.05;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            double Valor = (double)numOperSaldo.Value;
+            double juros = Valor * 1 * taxa;
+            double saldo = juros + Valor;
+            numOperSaldo.Value = (decimal)saldo;
+        }
 
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show(
+                "Deseja mesmo sair do banco?",
+                "Banco moleque Ney",
+                MessageBoxButtons.YesNo);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Genio da bola");
+            }
+            else
+            {
+                MessageBox.Show("PALMEIRAS 4 FORÇA DE SP, CHORA PORCO");
+            }
         }
     }
 }
